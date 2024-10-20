@@ -26,7 +26,8 @@ public class CalculadoraUnidades {
         try {
             System.out.print("Select an option (10 to exit): ");
             opcion = scanner.nextInt();
-
+            
+            selectTypeOfMagnitude(opcion);
             // Process the selected option here (add your switch-case or if-else logic)
 
         } catch (InputMismatchException e) {
@@ -34,70 +35,63 @@ public class CalculadoraUnidades {
             scanner.next(); // Clear invalid input
         }
 
-        switch (opcion) {
-            case 1:
-               try {
-                    System.out.println("******* LENGHT ************");
-                    System.out.println("1. in to cm");
-                    System.out.println("2. ft to in");
-                    System.out.println("3. yd to m");
-                    System.out.println("4. n mille to m");
-                    System.out.println("5. cm to in");
-                    System.out.println("6. m  to ft");
-                    System.out.println("7. m to yd");
-                    System.out.println("8. km to mille");
-                    System.out.println("9. m  to n mille");
-                    System.out.println("10. exit");
-                    opcion = 0;
-                    try {
-                        System.out.print("Select an option (10 to exit): ");
-                        opcion = scanner.nextInt();
-
-                        // Process the selected option here (add your switch-case or if-else logic)
-
-                    } catch (InputMismatchException e) {
-                        System.out.println("Invalid input. Please enter a number.");
-                        scanner.next(); // Clear invalid input
-                    }
-                    switch (opcion){
-                        case 1:
-                            try {
-                                System.out.println("insert the inches in");
-                                double pulgadas = scanner.nextDouble();
-
-                                System.out.println(pulgadas + " inches equals to a: " + (pulgadas*2.54) + "cm" );
-
-                            } catch (InputMismatchException e) {
-                                System.out.println("Invalid input. Please enter a valid number .");
-                                scanner.next(); // Clear invalid input
-                            }
-                            break;
-                        case 2:
-                            try {
-                                System.out.println(" insert the foots ft");
-                                double ft = scanner.nextDouble();
-                                System.out.println(ft + " inches equals to a: " + (ft * 12));
-
-                            } catch (InputMismatchException e) {
-                                System.out.println("Invalid input. Please enter a valid number .");
-                                scanner.next(); // Clear invalid input
-
-                            }
-                            break;
-
-                    }break;
-
-                } catch (Exception e) {
-
-                }
-        }
+//         switch (opcion) {
+//             case 0:
+//                try {
+//                     opcion = 0;
+//                     try {
+//                         System.out.print("Select an option (10 to exit): ");
+//                         opcion = scanner.nextInt();
+// 
+//                         // Process the selected option here (add your switch-case or if-else logic)
+// 
+//                     } catch (InputMismatchException e) {
+//                         System.out.println("Invalid input. Please enter a number.");
+//                         scanner.next(); // Clear invalid input
+//                     }
+//                     switch (opcion){
+//                         case 1:
+//                             try {
+//                                 System.out.println("insert the inches in");
+//                                 double pulgadas = scanner.nextDouble();
+// 
+//                                 System.out.println(pulgadas + " inches equals to a: " + (pulgadas*2.54) + "cm" );
+//
+//                             } catch (InputMismatchException e) {
+//                                 System.out.println("Invalid input. Please enter a valid number .");
+//                                 scanner.next(); // Clear invalid input
+//                             }
+//                             break;
+//                         case 2:
+//                             try {
+//                                 System.out.println(" insert the foots ft");
+//                                 double ft = scanner.nextDouble();
+//                                 System.out.println(ft + " inches equals to a: " + (ft * 12));
+// 
+//                             } catch (InputMismatchException e) {
+//                                 System.out.println("Invalid input. Please enter a valid number .");
+//                                 scanner.next(); // Clear invalid input
+// 
+//                             }
+//                             break;
+// 
+//                     }break;
+// 
+//                 } catch (Exception e) {
+// 
+//                 }
+//         }
 
     }
 
-    public static selectMagnitude(option) {
+    public static void selectTypeOfMagnitude(int option) {
       switch (option) {
         case 0:
-          this.lengthStrategy()          
+          try {
+            lengthStrategy();
+          } catch (Exception e) {
+            System.err.println(e);;
+          }
           break;
 
         default:
@@ -106,7 +100,7 @@ public class CalculadoraUnidades {
       }
     }
 
-    public static lengthStrategy() {
+    public static void lengthStrategy() {
       System.out.println("******* LENGHT ************");
       System.out.println("1. in to cm");
       System.out.println("2. ft to in");
@@ -117,6 +111,15 @@ public class CalculadoraUnidades {
       System.out.println("7. m to yd");
       System.out.println("8. km to mille");
       System.out.println("9. m  to n mille");
-      System.out.println("10. exit"); 
+      System.out.println("10. exit");
+      
+      int opcion = 0;
+      Scanner scanner = new Scanner(System.in);
+      try {
+        System.out.println("select a option (10 to exit):  ");
+        opcion = scanner.nextInt();
+      } catch (Exception e) {
+        System.err.println("please select a valid option");
+      }
     }
 }

@@ -10,12 +10,12 @@ public class CalculadoraUnidades {
 
 
         System.out.println("*********************************++**");
-        System.out.println("calculadora de conversion de unidades");
+        System.out.println("Unit conversion calculator");
         System.out.println("1. lenght                            ");
         System.out.println("2. Area                              ");
-        System.out.println("3. volumen                           ");
+        System.out.println("3. volume                           ");
         System.out.println("4. Mass                              ");
-        System.out.println("5. Velocidad                         ");
+        System.out.println("5. Velocity                         ");
         System.out.println("6. Pressure                          ");
         System.out.println("7. Energy                            ");
         System.out.println("8. Power                             ");
@@ -62,10 +62,10 @@ public class CalculadoraUnidades {
                     switch (opcion){
                         case 1:
                             try {
-                                System.out.println("ingrese las pulgadas in");
+                                System.out.println("insert the inches in");
                                 double pulgadas = scanner.nextDouble();
 
-                                System.out.println(pulgadas + " pulgadas equivale a: " + (pulgadas*2.54) + "cm" );
+                                System.out.println(pulgadas + " inches equals to a: " + (pulgadas*2.54) + "cm" );
 
                             } catch (InputMismatchException e) {
                                 System.out.println("Invalid input. Please enter a valid number .");
@@ -74,9 +74,9 @@ public class CalculadoraUnidades {
                             break;
                         case 2:
                             try {
-                                System.out.println(" ingresa los ft");
+                                System.out.println(" insert the foots ft");
                                 double ft = scanner.nextDouble();
-                                System.out.println(ft + " pulgadas equivale a: " + (ft * 12));
+                                System.out.println(ft + " inches equals to a: " + (ft * 12));
 
                             } catch (InputMismatchException e) {
                                 System.out.println("Invalid input. Please enter a valid number .");
